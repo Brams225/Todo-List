@@ -51,16 +51,16 @@ function deleteCheck(e) {
   }
 
   //CHECK MARK
-  if (item.classList[0] === "complete-btn") {
-    const todo = item.parentElement;
-    todo.classList.toggle("completed");
+  if (item.classList[0] === "complete-btn") { //if est une instruction qui exécute une instruction si une condition donnée est vraie ou équivalente à vrai
+    const todo = item.parentElement;  //const permet de créer une constante nommée accessible uniquement en lecture Une constante ne peut pas être déclarée à nouveau.
+    todo.classList.toggle("completed");  //classList est un objet JavaScript qui permet de lister les classes qui sont positionnées sur un élément
   }
 }
 
 function filterTodo(e) {
   const todos = todoList.childNodes;
   todos.forEach(function (todo) {
-    switch (e.target.value) {
+    switch (e.target.value) {  //switch permet d'evaluer la valeur et si la valeurs corespond il execute les instruction demander 
       case "all":
         todo.style.display = "flex";
         break;
@@ -85,7 +85,7 @@ function filterTodo(e) {
 function saveLocalTodos(todo) {
   //Checker si il y a des items existants
   let todos;
-  if (localStorage.getItem("todos") === null) {
+  if (localStorage.getItem("todos") === null) {  //la fonctio permet de creer une zone memoire qui permet de sauvegarder les element ( todo list ) dans la page
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
@@ -96,7 +96,7 @@ function saveLocalTodos(todo) {
 
 function getTodos() {
   let todos;
-  if (localStorage.getItem("todos") === null) {
+  if (localStorage.getItem("todos") === null) { //la fonction permet de mettre l'element creer dans la zone memoire
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
@@ -125,7 +125,7 @@ function getTodos() {
   });
 }
 
-function removeLocalTodos(todo) {
+function removeLocalTodos(todo) { //cette fonction permet de supprimer un element deja dans la zone memoire elle est relié autre fonction ( si je clique sur le bouton plus pour creer une nouvelle liste cette liste ( element ) sera sauvegarder dans la zone memoire et si j'aappuis sur le boutton delete l'lement de cette liste sera supprimer de la zone memoire
   let todos;
   if (localStorage.getItem("todos") === null) {
     todos = [];

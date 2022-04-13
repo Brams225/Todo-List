@@ -58,8 +58,8 @@ function deleteCheck(e) {
 }
 
 function filterTodo(e) {
-  const todos = todoList.childNodes;
-  todos.forEach(function (todo) {
+  const todos = todoList.childNodes;  //childNodes est un tableau d'éléments de tous les noeuds de l'élément parent
+  todos.forEach(function (todo) { //forEach est une commande qui permet d'exécuter une fonction donnée sur chaque élément du tableau.
     switch (e.target.value) {  //switch permet d'evaluer la valeur et si la valeurs corespond il execute les instruction demander 
       case "all":
         todo.style.display = "flex";
@@ -82,10 +82,10 @@ function filterTodo(e) {
   });
 }
 
-function saveLocalTodos(todo) {
+function saveLocalTodos(todo) { //la fonction permet de creer une zone memoire qui permet de sauvegarder les element ( todo list ) dans la page
   //Checker si il y a des items existants
   let todos;
-  if (localStorage.getItem("todos") === null) {  //la fonctio permet de creer une zone memoire qui permet de sauvegarder les element ( todo list ) dans la page
+  if (localStorage.getItem("todos") === null) {  
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
@@ -94,9 +94,9 @@ function saveLocalTodos(todo) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
-function getTodos() {
+function getTodos() { //la fonction permet de mettre l'element creer dans la zone memoire
   let todos;
-  if (localStorage.getItem("todos") === null) { //la fonction permet de mettre l'element creer dans la zone memoire
+  if (localStorage.getItem("todos") === null) { 
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));

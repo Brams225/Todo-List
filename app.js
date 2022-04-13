@@ -59,7 +59,7 @@ function deleteCheck(e) {
 
 function filterTodo(e) {
   const todos = todoList.childNodes;  //childNodes est un tableau d'éléments de tous les noeuds de l'élément parent
-  todos.forEach(function (todo) { //forEach est une commande qui permet d'exécuter une fonction donnée sur chaque élément du tableau.
+  todos.forEach(function (todo) { //forEach est une commande qui permet d'exécuter une fonction donnée sur chaque élément du tableau (todos) .
     switch (e.target.value) {  //switch permet d'evaluer la valeur et si la valeurs corespond il execute les instruction demander 
       case "all":
         todo.style.display = "flex";
